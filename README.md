@@ -1,1 +1,1 @@
-# dict-icp-exercise
+# dictnv-icp-exercise
