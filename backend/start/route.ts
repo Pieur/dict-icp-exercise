@@ -2,6 +2,7 @@ import { Router } from 'express';
 
 import ApisController from 'backend/app/controllers/Http/ApisController';
 import UsersController from 'backend/app/controllers/Http/UsersController';
+import gameRecommendationController from 'backend/app/controllers/Http/gameRecommendationController';
 import isAuth from 'App/Middleware/Auth';
 
 
@@ -18,6 +19,10 @@ Route.get('/user/me', isAuth, UsersController.me);
 Route.post('/user/register', isAuth, UsersController.register);
 Route.post('/user/update', isAuth, UsersController.update);
 
+// GAME RECOMMENDATION
+Route.post('/game-recommendation/create', isAuth, gameRecommendationController.create);
+Route.post('/game-recommendation/update/:recommendationId', isAuth, gameRecommendationController.update);
+Route.get('/game-recommendation/list', isAuth, gameRecommendationController.view_all_by_user);
 
 /*
 |--------------------------------------------------------------------------
