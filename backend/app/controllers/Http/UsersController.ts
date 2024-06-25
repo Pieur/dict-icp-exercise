@@ -1,4 +1,4 @@
-import UserRegisterValidator from 'App/Validators/UserRegisterValidator';
+
 import UserUpdateValidator from 'App/Validators/UserUpdateValidators';
 import { User } from 'Database/entities/user';
 import { ic } from 'azle';
@@ -33,7 +33,7 @@ export default class UsersController {
   }
 
   static async register(request: Request, response: Response) {
-    const { data, success, error } = UserRegisterValidator.validate(request.body);
+    const { data, success, error } = request.body;
 
     if (!success) {
       response.status(400);
