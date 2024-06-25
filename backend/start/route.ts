@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
-import ApisController from 'App/Controllers/Http/ApisController';
-import UsersController from 'App/Controllers/Http/UsersController';
+import ApisController from 'backend/app/controllers/Http/ApisController';
+import UsersController from 'backend/app/controllers/Http/UsersController';
 import isAuth from 'App/Middleware/Auth';
 
 
@@ -26,13 +26,6 @@ Route.post('/user/update', isAuth, UsersController.update);
 */
 
 Route.get('/health', ApisController.health);
-Route.get('/config', ApisController.config);
-
-Route.get('/uploads/:filename', ApisController.readupload);
-Route.post('/upload', isAuth, ApisController.testupload);
-Route.get('/uploads/v2/:filename', ApisController.readupload_v2);
-
-
 
 // USER
 Route.get('/user/:username/info', UsersController.view_info_of_user_by_public);

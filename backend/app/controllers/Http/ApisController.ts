@@ -1,4 +1,3 @@
-import { Configuration } from 'Database/entities/configuration';
 import { Response, Request } from 'express';
 import { createReadStream, writeFileSync } from 'fs';
 import { readFile } from 'fs/promises';
